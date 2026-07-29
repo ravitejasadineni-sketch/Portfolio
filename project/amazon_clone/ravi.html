@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUTUBEP1</title>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <button popovertarget="authorPopover" class="author-trigger">
+                <div popvertarget="author-profile" class="circle"></div>
+                <span class="pan">Sara Tendulkar</span>
+            </button>
+        </div>
+        <div class="popback">
+            <h2 style="font-family: cursive;">Her style reflects confidence, grace, and maturity.</h2>
+            <p class="paragraph" style="font-family: Georgia, 'Times New Roman', Times, serif;">Sara Tendulkar studied at University College London (UCL) and has a background in clinical and public health nutrition, so her profile is not just fashion/social media based.She has also stepped into modeling, wellness, and brand campaigns, while keeping a polished public image rather than being loud or overly commercial.</p>
+        </div>
+        <div id="authorPopover" popover class="authorpop" >
+            <div class="containerlarge">
+                <span class="panner">Sara Tendulkar</span>
+                <div class="bottom" style="display: flex;gap: 10px;">
+                    <p class="paragraph" style="font-family: Verdana, Geneva, sans-serif;">Sara Tendulkar has built a public image that goes beyond being known as Sachin Tendulkar’s daughter.Sara carries an aura of confidence and softness that makes her stand out as a figure of modern grace and aspirational charm. She is often admired for her polished, low-key personality, elegant fashion sense, and carefully curated social media presence that blends lifestyle, skincare, travel, and luxury aesthetics. she tends to keep a more private and composed image, which adds to the curiosity and attention around her. Her appeal comes from a mix of grace, modern style.</p>
+                    <div class="imagesara"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ivory: #F4EFE4;
+    --ivory-dim: #C9C2AF;
+    --gold: #C9A24B;
+    --gold-soft: #8A7233;
+    --gold-bright: #E8C878;
+    --charcoal: #15140F;
+    --charcoal-2: #1F1D16;
+    --maroon: #2A1710;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;;
+    padding: 32px 16px;
+    background: radial-gradient(circle at 30% 20%, var(--maroon) 0%, var(--charcoal) 55%, #0A0906 100%);
+  }
+
+.container {
+    width: min(850px, 95%);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow:
+        0 30px 60px -20px rgba(20, 17, 12, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+    background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+}
+
+.profile {
+    margin-bottom: 4px;
+}
+
+.circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-image: url(https://i.pinimg.com/736x/c8/8b/de/c88bde7e8afd89dfcaf16947ca926391.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 0 2px var(--ivory), 0 0 0 3px var(--gold-soft);
+    transition: box-shadow 0.35s ease;
+    flex-shrink: 0;
+}
+
+.author-trigger {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 0;
+    text-align: left;
+}
+
+.author-trigger:hover .circle {
+    box-shadow: 0 0 0 2px var(--ivory), 0 0 0 3px var(--gold);
+}
+
+.pan:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  transform: matrix(1.3, 0, 0, 1, 10, 0);
+  color: var(--gold);
+}
+
+.containerlarge {
+    display: flex;
+    width: 800px;
+    height: 400px;
+    padding: 20px;
+    gap: 20px;
+    flex-direction: column;
+    background: radial-gradient(circle at 30% 20%, var(--maroon) 0%, var(--charcoal) 55%, #0A0906 100%);
+    position: relative;
+}
+
+.containerlarge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(120deg, rgba(255,255,255,0.04), transparent 28%);
+}
+
+.pan {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 18px;
+  color: var(--gold-bright);
+}
+
+.panner {
+  display: flex;
+  justify-content: center;
+  color: var(--gold-bright);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.popupover {
+  display: block;
+  height: 100px;
+  width: 100px;
+}
+
+.popback {
+  display: flex;
+  flex-direction: column;
+  background-color: none;
+  padding: 0px 20px;
+  gap: 10px;
+}
+
+.popback h2 {
+    color: var(--gold);
+}
+
+.paragraph {
+    font-size: 18px;
+    line-height: 1.5;
+    width: 100%;
+    color: var(--ivory-dim);
+}
+
+.bottom{
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.imagesara {
+    width: 280px;
+    min-height: 100%;
+    background-image: url(https://i.pinimg.com/736x/97/17/59/971759596f40a960516ac40b8d495366.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+#authorPopover {
+    background: radial-gradient(circle at 30% 20%, var(--maroon) 0%, var(--charcoal) 55%, #0A0906 100%);
+    border: 1px solid var(--gold-soft);
+    border-radius: 16px;
+    color: var(--ivory);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+#authorPopover {
+    position: absolute;
+    inset: auto auto auto 0;
+    top: calc(50% - 70px);
+    left: calc(50% - 20%);
+}
+
+#authorPopover::backdrop {
+    background: rgba(0,0,0,0.6);
+}
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .circle {
+        width: 56px;
+        height: 56px;
+      }
+
+      .pan {
+        font-size: 18px;
+      }
+
+      .popback h2 {
+        font-size: 24px;
+      }
+
+      .paragraph {
+        font-size: 15.5px;
+        line-height: 1.7;
+      }
+
+      .containerlarge {
+        width: 400px;
+        padding: 22px;
+        height: 1120px;
+      }
+
+      .panner {
+        font-size: 21px;
+      }
+
+      .popover-text {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .bottom{
+        display: flex;
+        gap: 10px;
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        }
+        .imagesara {
+            width: 380px;
+            height: 400px;
+            min-height: 100%;
+            background-image: url(https://i.pinimg.com/736x/97/17/59/971759596f40a960516ac40b8d495366.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        #authorPopover {
+        position: absolute;
+        inset: auto auto auto 0;
+        top: calc(40%);
+        left: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 14px;
+      }
+
+      .container {
+        padding: 18px;
+      }
+
+      .author-trigger {
+        gap: 12px;
+      }
+
+      .circle {
+        width: 50px;
+        height: 50px;
+      }
+
+      .pan {
+        font-size: 16px;
+      }
+
+      .popback h2 {
+        font-size: 21px;
+      }
+
+      .paragraph,
+      .popover-text {
+        font-size: 14.5px;
+      }
+
+      .containerlarge {
+        padding: 18px;
+      }
+    }
+</style>
